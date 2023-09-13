@@ -65,6 +65,22 @@ class StatTracker
     (ties.to_f / games.length).round(2)
   end
 
+  def count_of_games_by_season
+# ATTEMPT WITH TALLY
+    # require 'pry'; binding.pry
+    # games.tally { |game| game['season'] }
+    # tally is not working as anticipated
+
+# WORKING SOLUTION
+    games_grouped_by_season = games.group_by { |game| game['season'] }
+
+    games_count_by_season = {}
+    games_grouped_by_season.each do |season, season_games|
+      games_count_by_season[season] = season_games.count
+    end
+    games_count_by_season
+  end
+
   # HELPER METHODS
 
 
