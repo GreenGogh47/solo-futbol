@@ -1,5 +1,6 @@
 require './lib/stat_tracker'
 
+# update fixtures to data for production
 game_path = './data/games.csv'
 team_path = './data/teams.csv'
 game_teams_path = './data/game_teams.csv'

@@ -28,8 +28,17 @@ class StatTracker
     stat_tracker
   end
 
-  def self.games(games)
-    
+  # ITERATION 2 METHODS
+
+  def highest_total_score
+    highest_game = games.max_by do |game|
+      game['away_goals'].to_i + game['home_goals'].to_i
+    end
+    highest_game['away_goals'].to_i + highest_game['home_goals'].to_i
   end
+
+  # HELPER METHODS
+
+
 
 end
