@@ -37,6 +37,22 @@ class StatTracker
     highest_game['away_goals'].to_i + highest_game['home_goals'].to_i
   end
 
+  def lowest_total_score
+    lowest_game = games.min_by do |game|
+      game['away_goals'].to_i + game['home_goals'].to_i
+    end
+    lowest_game['away_goals'].to_i + lowest_game['home_goals'].to_i
+  end
+
+  def percentage_home_wins
+    wins = games.count do |game|
+      game['home_goals'].to_i > game['away_goals'].to_i
+    end
+    (wins.to_f / games.length * 100).round(2)
+  end
+
+  
+
   # HELPER METHODS
 
 

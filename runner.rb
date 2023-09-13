@@ -1,9 +1,11 @@
 require './lib/stat_tracker'
 
-# update fixtures to data for production
-game_path = './data/games.csv'
-team_path = './data/teams.csv'
-game_teams_path = './data/game_teams.csv'
+# update data to fixtures for faster testing
+# fixture files will NOT pass spec_harness
+
+game_path = './fixtures/games.csv'
+team_path = './fixtures/teams.csv'
+game_teams_path = './fixtures/game_teams.csv'
 
 locations = {
   games: game_path,
