@@ -48,10 +48,15 @@ class StatTracker
     wins = games.count do |game|
       game['home_goals'].to_i > game['away_goals'].to_i
     end
-    (wins.to_f / games.length * 100).round(2)
+    (wins.to_f / games.length).round(2)
   end
 
-  
+  def percentage_visitor_wins
+    wins = games.count do |game|
+      game['home_goals'].to_i < game['away_goals'].to_i
+    end
+    (wins.to_f / games.length).round(2)
+  end
 
   # HELPER METHODS
 
